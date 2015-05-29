@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <h1>Rankings</h1>
-    <input type="text" placeholder="name, points">
-    <br>
-    <button id="add">Add To Rankings</button>
+    <div class="row">
+      <div class="small-12 small-centered medium-6 columns">
+        <h1>Rankings</h1>
+        <input type="text" placeholder="name, points">
+        <br>
+        <button id="add" class="expand">Add To Rankings</button>
 
-    <ul id="rankings"></ul>
-    <button id="clear">Clear Rankings</button>
-
+        <ul id="rankings"></ul>
+        <button id="clear" class="expand disabled">Clear Rankings</button>
+      </div>
+    </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script>
     <script src="js/main.js"></script>
