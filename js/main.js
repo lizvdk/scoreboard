@@ -59,4 +59,9 @@ $(document).ready(function() {
       $("#rankings").append("<li>" + "<b>"+ n.rank + ". " + "</b>" + n.name + ", " + n.points + " pts." + "</li>");
     });
   });
+
+  $("#clear").click(function(){
+    scores.length = 0;
+    $("#rankings").empty();
+  });
 });
