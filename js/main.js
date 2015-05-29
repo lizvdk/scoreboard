@@ -32,13 +32,14 @@ $(document).ready(function() {
   }
 
   function displayScores(scores) {
-    $("#rankings").slideUp(300, "swing");
-    $("#rankings").empty();
-    _(scores).forEach(function(n) {
-      $("#rankings").append("<li>" + "<b>"+ n.rank + ". " + "</b>" + n.name + ", " + n.points + " pts." + "</li>");
+    $("#rankings").slideUp(300, "swing", function() {
+      $("#rankings").empty();
+      _(scores).forEach(function(n) {
+        $("#rankings").append("<li>" + "<b>"+ n.rank + ". " + "</b>" + n.name + ", " + n.points + " pts." + "</li>");
+      });
+      $("#rankings").slideDown(400, "swing");
+      $("#clear").removeClass("disabled");
     });
-    $("#rankings").slideDown(400, "swing");
-    $("#clear").removeClass("disabled");
   }
 
   var scores = [];
@@ -69,9 +70,10 @@ $(document).ready(function() {
   });
 
   $("#clear").click(function(){
-    scores.length = 0;
-    $("#rankings").slideUp(300, "swing");
-    $("#rankings").empty();
-    $("#clear").addClass("disabled");
+    $("#rankings").slideUp(300, "swing", function() {
+      scores.length = 0;
+      $("#rankings").empty();
+      $("#clear").addClass("disabled");
+    });
   });
 });
