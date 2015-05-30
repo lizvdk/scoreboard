@@ -57,7 +57,7 @@
       $("#rankings").empty();
       for (j = 0, len = scores.length; j < len; j++) {
         score = scores[j];
-        $("#rankings").append("<li><b>" + score.rank + ".<b> " + score.name + ", " + score.points + " pts.</li>");
+        $("#rankings").append("<li><b>" + score.rank + ".</b> " + score.name + ", " + score.points + " pts.</li>");
       }
       $("#rankings").slideDown(400, "swing");
       return $("#clear").removeClass("disabled");
