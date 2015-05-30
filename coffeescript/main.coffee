@@ -28,7 +28,7 @@ displayScores = (scores) ->
   $("#rankings").slideUp(300, "swing", ->
     $("#rankings").empty()
     for score in scores
-      $("#rankings").append("<li><b>#{score.rank}.<b> #{score.name}, #{score.points} pts.</li>");
+      $("#rankings").append("<li><b>#{score.rank}.</b> #{score.name}, #{score.points} pts.</li>");
     $("#rankings").slideDown(400, "swing")
     $("#clear").removeClass("disabled")
   )
