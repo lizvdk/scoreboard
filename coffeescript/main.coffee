@@ -56,5 +56,5 @@ $ ->
     $("#rankings").slideUp(300, "swing", ->
       scores.length = 0
       $("#rankings").empty()
-      $("#{clear}").addClass("disabled")
+      $("#clear").addClass("disabled")
     )

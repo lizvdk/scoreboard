@@ -88,7 +88,7 @@
       return $("#rankings").slideUp(300, "swing", function() {
         scores.length = 0;
         $("#rankings").empty();
-        return $("" + clear).addClass("disabled");
+        return $("#clear").addClass("disabled");
       });
     });
   });
