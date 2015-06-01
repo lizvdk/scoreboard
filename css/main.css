@@ -1,3 +1,50 @@
+body {
+  background-color: #F7F7F7 !important;
+  color: #2F2E2E;
+  font-weight: lighter;
+
+}
+
+h1 {
+  font-weight: bold;
+  color: #345E5E;
+}
+
+#app {
+  background-color: #FFF;
+  padding: 2%;
+  margin-top: 2%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #777;
+}
+
+#scoreboard {
+  background-color: #345E5E;
+  color: #ffffe5;
+  padding: 1%;
+  box-shadow: 0 0 10px #777;
+  border-radius: 5px;
+}
+
+#add {
+  background-color: #34495E;
+  box-shadow: inset #2C3E50 -3px -3px 0px;
+  line-height: 0.25em;
+}
+
+#add:hover {
+  background-color: #005580;
+}
+
 #rankings {
   list-style: none;
+}
+
+#clear {
+  color: #ffffe5;
+  transition: color 1s;
+}
+
+#clear:hover {
+  color: #FFFF70;
 }

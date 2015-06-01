@@ -52,6 +52,7 @@
   };
 
   displayScores = function(scores) {
+    $("#scoreboard").removeClass("hide");
     return $("#rankings").slideUp(300, "swing", function() {
       var j, len, score;
       $("#rankings").empty();
@@ -85,10 +86,10 @@
       return displayScores(scores);
     });
     return $("#clear").click(function() {
-      return $("#rankings").slideUp(300, "swing", function() {
+      return $("#rankings").slideUp(500, "swing", function() {
         scores.length = 0;
         $("#rankings").empty();
-        return $("#clear").addClass("disabled");
+        return $("#scoreboard").addClass("hide");
       });
     });
   });

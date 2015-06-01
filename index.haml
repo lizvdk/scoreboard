@@ -9,13 +9,24 @@
 
   %body
     .row
-      .small-centered.small-12.medium-6.columns
-        %h1 Rankings
-        %input{ type: "text", placeholder: "name, points"}
-        %br
-        %button#add.expand Add To Rankings
-        %ul#rankings
-        %button#clear.expand.disabled Clear Rankings
+      .small-centered.small-12.medium-8.columns
+        %section#app
+          %header
+            %h1.text-center Rankings
+          .row
+            .small-8.columns
+              %input{ type: "text", placeholder: "name, points"}
+            .small-4.columns
+              %button#add.radius Add to Rankings
+          .row
+            .small-12.columns
+              %section#scoreboard.hide
+                .row
+                  .small-12.columns
+                    %ul#rankings
+                .row
+                  .small-12.columns
+                    %a#clear.right Clear Rankings
 
     %script{ type: "text/javascript", src: "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" }
     %script{ type: "text/javascript", src: "js/main.js" }

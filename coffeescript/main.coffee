@@ -25,6 +25,7 @@ determineRanks = (scores) ->
       i++
 
 displayScores = (scores) ->
+  $("#scoreboard").removeClass("hide")
   $("#rankings").slideUp(300, "swing", ->
     $("#rankings").empty()
     for score in scores
@@ -53,8 +54,8 @@ $ ->
     displayScores(scores)
 
   $("#clear").click ->
-    $("#rankings").slideUp(300, "swing", ->
+    $("#rankings").slideUp(500, "swing", ->
       scores.length = 0
       $("#rankings").empty()
-      $("#clear").addClass("disabled")
+      $("#scoreboard").addClass("hide")
     )
