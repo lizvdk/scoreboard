@@ -60,8 +60,7 @@
         score = scores[j];
         $("#rankings").append("<li><b>" + score.rank + ".</b> " + score.name + ", " + score.points + " pts.</li>");
       }
-      $("#rankings").slideDown(400, "swing");
-      return $("#clear").removeClass("disabled");
+      return $("#rankings").slideDown(400, "swing");
     });
   };
 
@@ -70,27 +69,41 @@
     scores = [];
     $("#add").click(function() {
       var input, name, newScore, player, points;
-      input = $("input").val().split(",");
-      name = input[0];
-      points = parseInt(input[1], 10);
-      if (findExisting(scores, name)) {
-        player = findExisting(scores, name);
-        player.points += points;
+      if ($(this).hasClass("disabled")) {
+        return false;
       } else {
-        newScore = new Score(name, points);
-        scores.push(newScore);
+        input = $("input").val().split(",");
+        name = input[0];
+        points = parseInt(input[1], 10);
+        if (findExisting(scores, name)) {
+          player = findExisting(scores, name);
+          player.points += points;
+        } else {
+          newScore = new Score(name, points);
+          scores.push(newScore);
+        }
+        $("input").val("");
+        $("#add").addClass("disabled");
+        scores.sort(compare);
+        determineRanks(scores);
+        return displayScores(scores);
       }
-      $("input").val("");
-      scores.sort(compare);
-      determineRanks(scores);
-      return displayScores(scores);
     });
-    return $("#clear").click(function() {
+    $("#clear").click(function() {
       return $("#rankings").slideUp(500, "swing", function() {
         scores.length = 0;
         $("#rankings").empty();
         return $("#scoreboard").addClass("hide");
       });
+    });
+    return $("input").on('keyup change', function() {
+      var valid;
+      valid = $("input")[0].validity.valid === true;
+      if (valid) {
+        return $("#add").removeClass("disabled");
+      } else {
+        return $("#add").addClass("disabled");
+      }
     });
   });
 

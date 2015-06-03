@@ -31,27 +31,31 @@ displayScores = (scores) ->
     for score in scores
       $("#rankings").append("<li><b>#{score.rank}.</b> #{score.name}, #{score.points} pts.</li>");
     $("#rankings").slideDown(400, "swing")
-    $("#clear").removeClass("disabled")
   )
 
 $ ->
   scores = []
   $("#add").click ->
-    input = $("input").val().split(",")
-    name = input[0]
-    points = parseInt(input[1], 10)
-
-    if findExisting(scores, name)
-      player = findExisting(scores, name)
-      player.points += points
+    if $(@).hasClass("disabled")
+      return false
     else
-      newScore = new Score(name, points)
-      scores.push(newScore);
+      input = $("input").val().split(",")
+      name = input[0]
+      points = parseInt(input[1], 10)
 
-    $("input").val("")
-    scores.sort(compare)
-    determineRanks(scores)
-    displayScores(scores)
+      if findExisting(scores, name)
+        player = findExisting(scores, name)
+        player.points += points
+      else
+        newScore = new Score(name, points)
+        scores.push(newScore);
+
+      $("input").val("")
+      $("#add").addClass("disabled")
+
+      scores.sort(compare)
+      determineRanks(scores)
+      displayScores(scores)
 
   $("#clear").click ->
     $("#rankings").slideUp(500, "swing", ->
@@ -59,3 +63,11 @@ $ ->
       $("#rankings").empty()
       $("#scoreboard").addClass("hide")
     )
+
+  $("input").on('keyup change', ->
+    valid = $("input")[0].validity.valid == true
+    if valid
+      $("#add").removeClass("disabled")
+    else
+      $("#add").addClass("disabled")
+   )
