@@ -15,7 +15,9 @@
             %h1.text-center Rankings
           .row
             .small-8.columns
-              %input{ type: "text", placeholder: "name, points"}
+              %input{ type: "text", placeholder: "name, points",
+                      pattern: "^\\w+\\s*,\\s*\\d+\\s*$",
+                      required: true }
             .small-4.columns
               %button#add.radius Add to Rankings
           .row

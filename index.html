@@ -15,7 +15,7 @@
           </header>
           <div class='row'>
             <div class='small-8 columns'>
-              <input placeholder='name, points' type='text'>
+              <input pattern='^\w+\s*,\s*\d+\s*$' placeholder='name, points' required type='text'>
             </div>
             <div class='small-4 columns'>
               <button class='radius' id='add'>Add to Rankings</button>

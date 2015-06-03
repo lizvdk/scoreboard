@@ -48,3 +48,11 @@ h1 {
 #clear:hover {
   color: #FFFF70;
 }
+
+input:invalid, input:focus:invalid {
+  background-color: #f9e7f0;
+}
+
+input:valid, input:focus:valid {
+  background-color: #d2e6e6;
+}
