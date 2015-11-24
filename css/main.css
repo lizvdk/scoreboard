@@ -10,12 +10,18 @@ h1 {
   color: #345E5E;
 }
 
-#app {
+#app,
+#rules {
   background-color: #FFF;
   padding: 2%;
   margin-top: 2%;
   border-radius: 10px;
   box-shadow: 0 0 20px #777;
+}
+
+#rules {
+  color: #000;
+  font-weight: bolder;
 }
 
 #scoreboard {
