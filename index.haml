@@ -9,17 +9,30 @@
     %link{ rel:"shortcut icon", href: "favicon.ico" }
 
   %body
+  .row
+    .small-centered.small-12.medium-8.columns
+      %section#rules
+        %header
+          %h1.text-center Rules
+        .row
+          .small-8.columns.small-centered
+            %ul
+              %li After each player takes her/his turn, their name and score is entered into the text input in the format name, score.
+              %li Clicking Add to Rankings parses the contents of the form field and adds the output to the rankings.
+              %li The rankings should be appended to ul#rankings and formatted.
+              %li Players with the same score are 'tied', and should have the same rank.
+              %li Players can take any number of turns. The results of multiple turns are added to the players' score.
     .row
       .small-centered.small-12.medium-8.columns
         %section#app
           %header
             %h1.text-center Rankings
           .row
-            .small-8.columns
+            .small-12.medium-8.columns
               %input{ type: "text", placeholder: "name, points",
                       pattern: "^\\w+\\s*,\\s*\\d+\\s*$",
                       required: true }
-            .small-4.columns
+            .small-12.medium-4.columns.small-only-text-center
               %button#add.disabled.radius Add to Rankings
           .row
             .small-12.columns

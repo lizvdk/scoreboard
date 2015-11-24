@@ -10,38 +10,58 @@
   <body>
     <div class='row'>
       <div class='small-centered small-12 medium-8 columns'>
-        <section id='app'>
+        <section id='rules'>
           <header>
-            <h1 class='text-center'>Rankings</h1>
+            <h1 class='text-center'>Rules</h1>
           </header>
           <div class='row'>
-            <div class='small-8 columns'>
-              <input pattern='^\w+\s*,\s*\d+\s*$' placeholder='name, points' required type='text'>
-            </div>
-            <div class='small-4 columns'>
-              <button class='disabled radius' id='add'>Add to Rankings</button>
-            </div>
-          </div>
-          <div class='row'>
-            <div class='small-12 columns'>
-              <section class='hide' id='scoreboard'>
-                <div class='row'>
-                  <div class='small-12 columns'>
-                    <ul id='rankings'></ul>
-                  </div>
-                </div>
-                <div class='row'>
-                  <div class='small-12 columns'>
-                    <a class='right' id='clear'>Clear Rankings</a>
-                  </div>
-                </div>
-              </section>
+            <div class='small-8 columns small-centered'>
+              <ul>
+                <li>After each player takes her/his turn, their name and score is entered into the text input in the format name, score.</li>
+                <li>Clicking Add to Rankings parses the contents of the form field and adds the output to the rankings.</li>
+                <li>The rankings should be appended to ul#rankings and formatted.</li>
+                <li>Players with the same score are 'tied', and should have the same rank.</li>
+                <li>Players can take any number of turns. The results of multiple turns are added to the players' score.</li>
+              </ul>
             </div>
           </div>
         </section>
       </div>
+      <div class='row'>
+        <div class='small-centered small-12 medium-8 columns'>
+          <section id='app'>
+            <header>
+              <h1 class='text-center'>Rankings</h1>
+            </header>
+            <div class='row'>
+              <div class='small-12 medium-8 columns'>
+                <input pattern='^\w+\s*,\s*\d+\s*$' placeholder='name, points' required type='text'>
+              </div>
+              <div class='small-12 medium-4 columns small-only-text-center'>
+                <button class='disabled radius' id='add'>Add to Rankings</button>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='small-12 columns'>
+                <section class='hide' id='scoreboard'>
+                  <div class='row'>
+                    <div class='small-12 columns'>
+                      <ul id='rankings'></ul>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='small-12 columns'>
+                      <a class='right' id='clear'>Clear Rankings</a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js' type='text/javascript'></script>
+      <script src='js/main.js' type='text/javascript'></script>
     </div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js' type='text/javascript'></script>
-    <script src='js/main.js' type='text/javascript'></script>
   </body>
 </html>
